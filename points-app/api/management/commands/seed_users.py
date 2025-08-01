@@ -11,7 +11,7 @@ class Command(BaseCommand):
         users_data = [
             {
                 "first_name": "Admin",
-                "email": "admin@mail.com",
+                "email": "admin@test.com",
                 "is_admin": True,
                 "points": 1000,
                 "password": "123456"
@@ -32,7 +32,7 @@ class Command(BaseCommand):
 
             try:
                 user = User.objects.create_user(
-                    username=user_data['username'],
+                    username=user_data['email'],
                     email=user_data['email'],
                     password=user_data['password'],
                     first_name=user_data['first_name'],
