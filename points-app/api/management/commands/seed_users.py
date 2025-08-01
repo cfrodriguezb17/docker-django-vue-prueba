@@ -32,6 +32,7 @@ class Command(BaseCommand):
 
             try:
                 user = User.objects.create_user(
+                    username=user_data['username'],
                     email=user_data['email'],
                     password=user_data['password'],
                     first_name=user_data['first_name'],
