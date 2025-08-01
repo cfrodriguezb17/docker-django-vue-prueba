@@ -7,7 +7,7 @@ docker compose up --build
 ```
 
 pd: este comando puede variar puede ser tambien **docker-compose** pegado.
-pd2: tener en cuenta que si se han creado contenedores con nombres similares entonces cambiar los nombres de los contenedores en el **docker-compose.yml**.
+pd2: tener en cuenta que si se han creado contenedores con nombres similares entonces cambiar los nombres de los contenedores en el **docker-compose.yml**, igualmente con los puertos.
 
 ### Luego esperar...
 
