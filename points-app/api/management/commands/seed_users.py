@@ -26,12 +26,10 @@ class Command(BaseCommand):
         ]
 
         for user_data in users_data:
-            # Revisa si el usuario ya existe
             if User.objects.filter(email=user_data['email']).exists():
                 self.stdout.write(self.style.WARNING(f"El usuario {user_data['email']} ya existe."))
                 continue
 
-            # Crea el usuario usando create_user para hashear la contraseña
             try:
                 user = User.objects.create_user(
                     email=user_data['email'],
@@ -39,7 +37,6 @@ class Command(BaseCommand):
                     first_name=user_data['first_name'],
                     points=user_data['points'],
                     is_admin=user_data['is_admin'],
-                    # Para el admin, Django espera que is_staff y is_superuser sean True
                     is_staff=user_data['is_admin'],
                     is_superuser=user_data['is_admin']
                 )
